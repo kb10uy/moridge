@@ -3,11 +3,5 @@ name = "phorcys"
 version = "0.1.0"
 edition = "2021"
 
-[features]
-address-pattern = ["combine", "regex"]
-
 [dependencies]
-combine = { workspace = true, optional = true }
-regex = { workspace = true, optional = true }
 thiserror = { workspace = true }
-winnow = { workspace = true, optional = true }

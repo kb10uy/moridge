@@ -14,7 +14,4 @@ pub mod prelude {
         Bundle as OscBundle, Message as OscMessage, MessageBuilder as OscMessageBuilder,
         Packet as OscPacket,
     };
-
-    #[cfg(feature = "address-pattern")]
-    pub use crate::address::{AddressPattern as OscAddressPattern, Expression as OscExpression};
 }
