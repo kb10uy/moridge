@@ -30,7 +30,7 @@ impl Packet {
 
     /// Deserializes the bytes into OSC Packet.
     pub fn deserialize(bytes: &[u8]) -> Result<Packet> {
-        if bytes.len() == 0 {
+        if bytes.is_empty() {
             return Err(Error::NotEnoughData);
         }
 

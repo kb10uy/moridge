@@ -68,7 +68,7 @@ impl Message {
 
         let mut arguments = vec![];
         let mut rest_tag = &tag.as_bytes()[1..];
-        let mut rest_argument = &argument_bytes[..];
+        let mut rest_argument = argument_bytes;
         while !rest_tag.is_empty() {
             let (arg, next_tag, next_argument) = Message::parse_argument(rest_tag, rest_argument)?;
             rest_tag = next_tag;
@@ -91,7 +91,7 @@ impl Message {
         }
 
         // Slice address
-        let rest_bytes = &bytes[..];
+        let rest_bytes = bytes;
         let address_first_nul = match rest_bytes.iter().position(|&b| b == 0x00) {
             None => return Err(Error::NotTerminated),
             Some(0) => return Err(Error::InvalidAddress),

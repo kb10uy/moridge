@@ -38,7 +38,7 @@ impl Bundle {
         let mut bytes = Vec::with_capacity(16);
         bytes.extend_from_slice(BUNDLE_HEADER);
         bytes.extend_from_slice(&self.time_tag.0.to_be_bytes());
-        for element in self.elements.to_vec() {
+        for element in self.elements.iter().cloned() {
             bytes.extend_from_slice(&element.serialize());
         }
 

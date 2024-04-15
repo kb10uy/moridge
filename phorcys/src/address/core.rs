@@ -1,5 +1,3 @@
-//! Validation and parse of OSC Address.
-
 use crate::error::{Error, Result};
 
 use std::fmt::{Display, Formatter, Result as FmtResult};
